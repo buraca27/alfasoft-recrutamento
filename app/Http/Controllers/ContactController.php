@@ -49,7 +49,7 @@ class ContactController extends Controller
     public function update(Request $request, Contact $contact)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:6',
+            'name' => 'required|string|min:6',
             'contact' => ['required', 'digits:9', Rule::unique('contacts')->ignore($contact->id)],
             'email' => ['required', 'email', Rule::unique('contacts')->ignore($contact->id)],
         ]);
