@@ -1,4 +1,5 @@
 <h1>Detalhes</h1>
+<p>ID: {{ $contact->id }}</p>
 <p>Nome: {{ $contact->name }}</p>
 <p>Contacto: {{ $contact->contact }}</p>
 <p>Email: {{ $contact->email }}</p>

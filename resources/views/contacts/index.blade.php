@@ -9,9 +9,10 @@
 @if(session('success')) <p style="color:green;">{{ session('success') }}</p> @endif
 
 <table border="1">
-    <tr><th>Nome</th><th>Contacto</th><th>Email</th><th>Ações</th></tr>
+    <tr><th>ID</th><th>Nome</th><th>Contacto</th><th>Email</th><th>Ações</th></tr>
     @foreach($contacts as $c)
     <tr>
+        <td>{{ $c->id }}</td>
         <td><a href="{{ route('contacts.show', $c->id) }}">{{ $c->name }}</a></td>
         <td>{{ $c->contact }}</td>
         <td>{{ $c->email }}</td>
