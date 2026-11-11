@@ -37,6 +37,13 @@ class ContactValidationTest extends TestCase
         $this->get('/contacts/create')->assertRedirect('/login');
     }
 
+    public function test_guest_cannot_view_contact_details(): void
+    {
+        $contact = $this->makeContact();
+
+        $this->get("/contacts/{$contact->id}")->assertRedirect('/login');
+    }
+
     public function test_store_rejects_invalid_data(): void
     {
         $this->makeContact();
